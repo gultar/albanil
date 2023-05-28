@@ -1,4 +1,4 @@
-# Albañil - An AI-powered application bootstrapper
+# Albañil - A prompt-driven application bootstrapper
 
 This script is designed to create the file structure of a complex application based on the provided specifications. It uses the LangChain library to interact with the language model and generate the necessary code for each file in the structure.
 
