@@ -1,57 +1,72 @@
 # Albañil - A prompt-driven application bootstrapper
 
-This script is designed to create the file structure of a complex application based on the provided specifications. It uses the LangChain library to interact with the language model and generate the necessary code for each file in the structure.
+Albañil is a personal application builder that helps you create applications based on a set of specifications provided by the user. It generates the file structure and code for the application based on the given specifications.
 
-## Requirements
+## Prerequisites
 
-- Python 3.x
-- LangChain library
-- dotenv library
+Before using Albañil, make sure you have the following:
 
-## Setup
+- Python 3.x installed on your system.
+- The required Python packages installed. You can install them by running the following command:
 
-1. Install the required dependencies by running the following command:
+  ```shell
+  pip install -r requirements.txt
+  ```
 
-```shell
-pip install langchain python-dotenv
-```
+## Getting Started
 
-2. Create a `.env` file in the same directory as the script and add the following line, replacing `OPENAI_API_KEY` with your OpenAI API key:
+1. Clone the repository:
 
-```plaintext
-OPENAI_API_KEY=<your_openai_api_key>
-```
+   ```shell
+   git clone https://github.com/your-repository.git
+   cd albanil
+   ```
+
+2. Install the dependencies:
+
+   ```shell
+   pip install -r requirements.txt
+   ```
+
+3. Set up the environment variables:
+
+   Create a `.env` file in the project directory and provide the following variables:
+
+   ```
+   OPENAI_API_KEY=your_openai_api_key
+   ```
+
+   Replace `your_openai_api_key` with your OpenAI API key.
+
+4. Run the application:
+
+   ```shell
+   python albanil.py [-f FILE] [-y]
+   ```
+
+   The optional arguments are as follows:
+
+   - `-f FILE` or `--file FILE`: Specify a `.md` file to use as the value of the `spec` variable.
+   - `-y` or `--yes`: Accept all created files automatically without user confirmation.
+
+   If the `-f` option is not provided, the application will prompt you to provide the details of the application you want to create.
 
 ## Usage
 
-1. Create a Python script and copy the provided script into it.
+1. Run the application using the command mentioned in the "Getting Started" section.
 
-2. Modify the `specs` variable to include the desired application specifications.
+2. The application will display the specifications of the application and ask you to provide the filepaths and their descriptions in a JSON key/value pair format.
 
-3. Run the script using the following command:
+3. Enter the JSON data containing the filepaths and descriptions. The application will create the file structure of the application in the `./generated` folder.
 
-```shell
-python your_script_name.py
-```
+4. For each file in the file structure, the application will prompt you to write the code for the file. Only the code should be provided without any explanation, acknowledgement, comments, or markdown styling.
 
-4. The script will prompt you to provide the file structure of the application based on the specifications. Follow the instructions and input the requested information.
+5. After writing the code for a file, the application will create the file and save the code content to it.
 
-5. The script will generate the file structure and create the necessary files based on the provided specifications.
+6. If the `-y` option is provided, the application will automatically proceed with each file without asking for user confirmation. Otherwise, you will be asked to confirm whether you want to proceed with each file.
 
-6. Once the script completes, you will find the application file structure and files in the specified directory.
+7. Once all the files have been created, the application will display a message indicating the completion of the file creation process.
 
-## Notes
+## License
 
-- This script utilizes the LangChain library, which interfaces with the ChatGPT language model. The model generates the code for each file based on the provided specifications.
-
-- The generated code is written directly to the corresponding files. Please ensure that the file paths and content are correct before running the script.
-
-- The script uses the dotenv library to load environment variables from the `.env` file. Make sure to provide your OpenAI API key in the `.env` file for the script to work properly.
-
-- The script makes use of the `os` and `re` modules for file operations and regular expression matching, respectively. These modules are imported and used within the script.
-
-- The script will pause for 10 seconds after writing each file to allow time for rate limiting and prevent excessive API requests.
-
-- If any errors occur during file creation or writing, error messages will be displayed in the console.
-
-Please refer to the script comments and specifications for further details on its functionality and customization.
+This project is licensed under the [MIT License](LICENSE).
