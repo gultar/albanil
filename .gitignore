@@ -1,1 +1,7 @@
 .env
+./generated/*
+./models/
+./models/*
+./prompts/*
+./try.py
+./web_search_tool.py
