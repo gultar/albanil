@@ -158,8 +158,6 @@ def create_file_structure():
             print(structure)
             structure = json.loads(structure)
             
-            
-
             # Asking for user confirmation
             if is_automatic:
                 confirmation = "y"
