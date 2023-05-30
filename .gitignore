@@ -1,5 +1,4 @@
 .env
-./generated/*
 ./models/
 ./models/*
 ./prompts/*
