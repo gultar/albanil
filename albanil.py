@@ -166,7 +166,7 @@ def create_file_structure():
             else:
                 confirmation = input("Do you want to proceed with the created file structure? (y/n): ")
 
-            if confirmation.lower() == "y" or is_automatic:
+            if confirmation.lower() == "y":
                 return structure
             else:
                 reprompt = input("Do you want to add specifications?")
